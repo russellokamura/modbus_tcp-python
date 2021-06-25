@@ -1,13 +1,14 @@
 from pyModbusTCP.server import ModbusServer, DataBank
 from time import sleep
 from random import uniform
+import socket
 
-host = '192.168.0.159'
+host = socket.getfqdn()
 port = 12345
 server = ModbusServer(host, port, no_block=True)
 
 try:
-   print("Starting server...")
+   print("Starting server on {}:{}".format(host, port))
    server.start()
    print("Server is online!")
    state = [0]
