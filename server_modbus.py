@@ -4,7 +4,9 @@ from random import uniform
 import socket
 
 host = socket.getfqdn()
-port = 12345
+print(host)
+print(type(host))
+port = 502
 server = ModbusServer(host, port, no_block=True)
 
 try:
